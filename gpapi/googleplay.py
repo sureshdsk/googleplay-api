@@ -106,6 +106,7 @@ class GooglePlayAPI(object):
         self.setTimezone(timezone)
         self.ssl_verify = ssl_verify
         self.session = requests.session()
+        self.session.verify = self.ssl_verify
         self.session.mount('https://', AuthHTTPAdapter())
 
     def setLocale(self, locale):
